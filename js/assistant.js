@@ -19,7 +19,7 @@ if (box && CONFIG.aiEndpoint) {
     ev.preventDefault();
     const text = input.value.trim(); if (!text) return;
     add("user", text); history.push({ role: "user", text }); input.value = ""; send.disabled = true;
-    const wait = add("bot", "Escribiendo…"); const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 20000);
+    const wait = add("bot", "Escribiendo…"); const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 30000);
     try {
       const r = await fetch(CONFIG.aiEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: history.slice(-8) }), signal: ctl.signal });
       const d = await r.json().catch(() => ({}));

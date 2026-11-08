@@ -1,0 +1,1 @@
+{"type":"module","scripts":{"test":"node tests/validate.test.mjs && node tests/worker.test.mjs","test:e2e":"python3 tests/e2e/e2e.py"}}

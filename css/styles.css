@@ -70,6 +70,7 @@ input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{b
 .list{list-style:none;padding:0;display:grid;gap:var(--s1);margin-top:var(--s3)}
 .row{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s2);align-items:center;padding:var(--s2);border-radius:18px;background:#fff;box-shadow:0 0 0 2px var(--ink)}
 .row strong{flex:1 1 200px}.row span{flex:2 1 260px}.row select{width:auto}
+<<<<<<< HEAD
 .assistant{max-width:640px;margin-bottom:var(--s4);padding:var(--s3);border-radius:28px;background:var(--lilac)}
 .chat{list-style:none;padding:0;display:grid;gap:var(--s1);margin:var(--s2) 0;max-height:320px;overflow-y:auto}
 .msg{padding:.7rem 1rem;border-radius:18px;max-width:88%;background:#fff;overflow-wrap:anywhere}
@@ -82,3 +83,5 @@ input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{b
 .detail__close{padding:.7rem .25rem}
 .card__body h3,.card__body p,.row strong,.row span,.detail__body,.result{overflow-wrap:anywhere}
 .assistant .status{margin:0 0 var(--s1)}
+=======
+>>>>>>> aadc02a2d1268343e3f6429885dfb5d1b7de873f

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Panel admin · The Crochet Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="header"><a class="logo" href="index.html">The Crochet Lab</a><button id="logout" class="card__more" type="button" hidden>Cerrar sesión</button></header>
+    <main>
+      <div class="page-title"><h1 style="font-size:clamp(2.2rem,6vw,3.6rem)">Panel admin</h1></div>
+      <p id="msg" class="result" role="status" tabindex="-1"></p>
+      <form id="login" class="form" novalidate>
+        <label>Correo<input name="email" type="email" autocomplete="username" required></label>
+        <label>Contraseña<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="btn" type="submit">Entrar</button>
+      </form>
+      <div id="panel" hidden>
+        <section><h2>Productos</h2>
+          <form id="pform" class="form" novalidate>
+            <input type="hidden" name="id">
+            <label>Nombre<input name="name" required></label>
+            <label>Categoría<input name="category" required></label>
+            <label>Precio (COP)<input name="price" type="number" min="0" step="1" required></label>
+            <label>Descripción<textarea name="description" rows="3"></textarea></label>
+            <label>Color de respaldo<input name="color" type="color" value="#C9B8FF"></label>
+            <label>Foto (JPG, PNG o WEBP, máx. 2 MB)<input name="image" type="file" accept="image/jpeg,image/png,image/webp"></label>
+            <label><span><input name="active" type="checkbox" checked style="width:auto"> Visible en el catálogo</span></label>
+            <button class="btn" type="submit">Guardar producto</button>
+          </form>
+          <ul id="products" class="list"></ul>
+        </section>
+        <section><h2>Solicitudes</h2><ul id="requests" class="list"></ul></section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

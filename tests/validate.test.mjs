@@ -1,0 +1,12 @@
+import assert from "node:assert/strict";
+import { validateOrder } from "../js/validate.js";
+const ok = { name: "Ana", contact: "3104867437", piece: "Ropa", details: "Un gorro lila para mi hermano", colors: "" };
+assert.deepEqual(validateOrder(ok), {});
+assert.deepEqual(validateOrder({ ...ok, contact: "ana@correo.com" }), {});
+assert.ok(validateOrder({ ...ok, name: "A" }).name);
+assert.ok(validateOrder({ ...ok, contact: "hola" }).contact);
+assert.ok(validateOrder({ ...ok, contact: "12345" }).contact);
+assert.ok(validateOrder({ ...ok, piece: "" }).piece);
+assert.ok(validateOrder({ ...ok, details: "corto" }).details);
+assert.ok(validateOrder({ ...ok, details: "x".repeat(1001) }).details);
+console.log("validate: 8 comprobaciones OK");

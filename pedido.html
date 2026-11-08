@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5B3FFF">
+  <meta name="description" content="Haz tu pedido personalizado de crochet con ayuda de nuestro asistente.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%235B3FFF'/%3E%3Cpath d='M5 12c8 4 14-2 22 2M4 19c9 4 15-2 24 1M9 5c4 8 2 14 8 22' stroke='%23FF8FC7' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <title>Haz tu pedido · The Crochet Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="index.html">The Crochet Lab</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="pedido.html" aria-current="page">Haz tu pedido</a>
+      </nav>
+    </header>
+    <main>
+      <div class="page-title"><h1 style="font-size:clamp(2.2rem,6vw,3.6rem)">Haz tu pedido</h1><p>Cuéntanos qué quieres tejer. Registramos tu solicitud y te escribimos.</p></div>
+      <section id="assistant" class="assistant" aria-labelledby="ia-t">
+        <h2 id="ia-t">¿No sabes por dónde empezar?</h2>
+        <p>Chatea con el asistente: te hace unas preguntas y arma el resumen de tu pedido. No le des datos personales.</p>
+        <p id="ia-status" class="status" role="status">Activando asistente… Si este mensaje no desaparece, recarga la página.</p>
+        <ul id="chat" class="chat" role="log" aria-live="polite"></ul>
+        <form id="chatform" class="chatform"><input name="q" disabled maxlength="600" autocomplete="off" aria-label="Tu mensaje" placeholder="Ej: un gorro lila para mi hermano"><button class="btn" type="submit" disabled>Enviar</button></form>
+      </section>
+      <form id="order" class="form" novalidate>
+        <label>Tu nombre<input name="name" autocomplete="name" required><span class="err" data-err="name"></span></label>
+        <label>WhatsApp o correo<input name="contact" autocomplete="tel" required><span class="err" data-err="contact"></span></label>
+        <label>Tipo de pieza<select name="piece" required><option value="">Elige una opción</option><option>Amigurumi</option><option>Accesorio</option><option>Ropa</option><option>Decoración</option><option>Otra idea</option></select><span class="err" data-err="piece"></span></label>
+        <label>Tu idea<textarea name="details" rows="5" required placeholder="Para quién es, tamaño, personaje o estilo…"></textarea><span class="err" data-err="details"></span></label>
+        <label>Colores (opcional)<input name="colors"><span class="err" data-err="colors"></span></label>
+        <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">Enviar solicitud</button>
+      </form>
+      <p id="result" class="result" role="status" tabindex="-1"></p>
+    </main>
+    <footer class="footer"><p>© The Crochet Lab · <a data-whatsapp href="#">WhatsApp</a></p></footer>
+  </div>
+  <script type="module" src="js/pedido.js"></script>
+  <script type="module" src="js/assistant.js"></script>
+</body>
+</html>

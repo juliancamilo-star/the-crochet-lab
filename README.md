@@ -16,9 +16,9 @@ Web de un emprendimiento de crochet: catálogo, pedidos personalizados, panel de
 ## Ejecutar en tu computador
 
 ```
-python3 -m http.server 8000
+python3 -m http.server 8080
 ```
-Abre http://localhost:8000. (No funciona con doble clic: los módulos de JavaScript necesitan un servidor.)
+Abre http://localhost:8080. (No funciona con doble clic: los módulos de JavaScript necesitan un servidor.)
 
 ## Pruebas
 
